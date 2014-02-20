@@ -1,0 +1,42 @@
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="pull-right">
+
+      <a ng-href="/ratingsubmit" class="btn btn-default btn-lg">Rate</a>
+    </div>
+    <div class="clearfix">
+
+      <div class="company-name">
+        {{company.name}}
+      </div>
+      <a href="http://www.{{company.webDomain}}">{{ company.webDomain }}</a>
+      <br>
+
+      <div class="company-score">
+        <rating value="rating.score" max="5" readonly="true"></rating> 
+      </div>
+
+      <div ng-if="company.ratingsCount" class="ratings-count">{{company.ratingsCount}}&#160;{{company.ratingsCount == 1 ? 'rating' : 'ratings'}}</div>
+    </div>
+  </div>
+</div>
+
+<ul class="ratings list-group">
+  <li ng-repeat="rating in ratings | orderBy:'-submitted'" class="list-group-item">
+    <div>
+      <span ng-if="rating.title" class="label label-default">{{rating.title}}&#160;</span>
+      <span ng-if="rating.location" class="label label-default">{{rating.location}}&#160;</span>
+      <span class="date">{{rating.submitted | date:'medium'}}</span>
+    </div>
+
+    <div class="rater-score">
+      <rating value="rating.score" max="5" readonly="true"></rating>
+    </div>
+
+    <div ng-if="rating.comment">
+      <div class='separator'></div>
+      <p>{{rating.comment}}</p>
+    </div>
+  </li>
+</ul>

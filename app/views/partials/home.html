@@ -1,0 +1,13 @@
+<div class="home-page">
+  <div class="page-header">
+    <h1>lemonfy</h1>
+  </div>
+  <p>Search for a company... </p>
+
+  <input ng-model="q" init-focus="" class="search-input form-control" type="text" ng-change="inputChange()" typeahead="n.name for n in companyNames | filter:$viewValue | limitTo:8" typeahead-on-select="select($item)" >
+
+  <div ng-show="showAdd" class='search-not-found'>
+    Couldn't find the company? <a class='company-submit-url' ng-href="/companysubmit?q={{q}}"> Add it now</a>
+  </div>
+
+</div>

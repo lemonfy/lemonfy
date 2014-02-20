@@ -1,0 +1,148 @@
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+body {
+  background: #FAFAFA;
+  color: #666666;
+  font-family: 'Droid Sans', Arial, sans-serif;
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px;
+  padding: 0 0 40px;
+}
+.navbar-default, #footer {
+  border-color: #e0e0e0;
+  background-color: #f0f0f0; 
+}
+#footer {
+  height: 40px;
+}
+#footer .footer-content {
+  margin: 10px 0;
+}
+#footer .nav-url {
+  color: #666666;
+}
+#footer .twitter-url {
+  cursor: pointer;
+}
+.center {
+  text-align: center;
+}
+.container {
+  width: auto;
+  max-width: 680px;
+}
+.home-page {
+  max-width: 460px;
+  margin: auto;
+}
+.home-page h1 {
+  font-size: 64px;
+  font-family: 'Montserrat Alternates', Arial, sans-serif;
+  font-weight: bold;
+}
+.home-page .search-not-found {
+  margin: 10px 0;
+  padding: 10px;
+  color: #245269;
+  background-color: #f0f7fd;
+  border: 1px solid #d0e3f0;
+  border-radius: 4px;
+}
+.my-panel-heading {
+  padding-left: 15px;
+}
+.panel-block-title {
+  font-weight: bold;
+  padding: 10px 0;
+  margin-top: 30px;
+  color: #AAA;
+  border-top: 1px solid #DDD;
+}
+.separator {
+  margin: 5px 0;
+  border-top: 1px solid #EEE;
+}
+.pick-star {
+  cursor: pointer;
+}
+.company-name {
+  font-size: 140%;
+  font-weight: bold;
+}
+.company-score,
+.rater-score {
+  padding-top: 5px;
+}
+.ratings-count {
+  padding-left: 5px;
+  color: #AAA;
+}
+.spinner {
+  width: 32px;
+  height: 32px;
+  margin: 100px auto 0;
+  background-image: url("/images/spin_32x32.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%; /* Rounds out the halo */
+  opacity: .7; /* Some subtle opacity to help blend with variable background colors */
+}
+.star-off {
+  color: #dddddd;
+}
+.star-on {
+  color: #ffc11a;
+}  
+.about {
+  color: black;
+  padding: 0 40px;
+}
+.about p {
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.6;
+}
+.about .separator {
+  border-top: 1px solid #DDD;
+}
+.about h3 {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Droid Sans', Arial, sans-serif;
+}
+/* animation */
+.reveal.ng-enter {
+  -webkit-transition:0.3s linear all;
+  -moz-transition:0.3s linear all;
+  -o-transition:0.3s linear all;
+  transition:0.3s linear all;
+
+  opacity:0;
+}
+.reveal.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.slide-reveal.ng-enter {
+  -webkit-transition:2s linear all;
+  -moz-transition:2s linear all;
+  -o-transition:2s linear all;
+  transition:2s linear all;
+
+  opacity:0.5;
+  position:relative;
+  opacity:0;
+  top:3;
+}
+.slide-reveal.ng-enter.ng-enter-active {
+  top:0;
+  opacity:1;
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>lemonfy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Montserrat+Alternates:700' rel='stylesheet' type='text/css'>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(app) styles/vendor.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="lemonfyApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="wrap">
+
+      <div ng-controller="HeaderController" ng-show="showHeader" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Home</a>
+          </div>
+          <div class="collapse navbar-collapse">
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <div class="container" >
+        
+        <div ng-controller="AlertController">
+          <a id="scroll-to-alerts"></a>
+          <alert ng-repeat="alert in alerts" class="slide" type="alert.type" close="close($index)">
+            <div ng-bind-html="alert.msg"></div>
+          </alert>
+        </div>
+
+        <div id="main" ng-view="" class="reveal"> 
+        </div>
+
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <p class="pull-right text-muted footer-content"><a class='nav-url' ng-href="/about">About</a></p>
+        <a class='twitter-url' href='http://twitter.com/lemonfyteam'><i class='fa fa-twitter fa-2x' style='margin-top:6px'></i></a>
+      </div>
+    </div>
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js(app) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <!-- endbower -->
+     <script src="scripts/vendor/ui-bootstrap-custom-tpls-0.10.0.js"></script>
+   <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/data_store.js"></script>
+    <script src="scripts/services/route_cache.js"></script>
+    <script src="scripts/services/alert_service.js"></script>
+    <script src="scripts/controllers/company_page.js"></script>
+    <script src="scripts/controllers/alert.js"></script>
+    <script src="scripts/controllers/validate_rating.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/header.js"></script>
+    <script src="scripts/controllers/company_submit.js"></script>
+    <script src="scripts/controllers/rating_submit.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

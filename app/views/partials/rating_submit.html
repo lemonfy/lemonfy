@@ -1,0 +1,103 @@
+<div ng-if="showLoading" class="spinner"></div>
+
+<div ng-if="!showLoading && !showSuccess" class="panel panel-default rating-submit-panel">
+  <div class="my-panel-heading">
+    <h4>
+      <a href="http://www.{{company.webDomain}}">{{company.name}}</a>
+    </h4>
+  </div>
+
+  <div class='separator'></div>
+
+  <div class="panel-body">
+    <form ng-submit="submit()" name="form" novalidate>
+      <div class="form-group" ng-class="{'has-error': !checkScore() && submitted}">
+        <label class="control-label" for="score">Pick a star</label>  
+        <div>
+          <rating value="rating.score" max="5" class="pick-star"></rating>
+        </div>
+      </div>
+
+      <div class="form-group" ng-class="{'has-error': form.email.$invalid && submitted}">
+        <label class="control-label" for="email">Your work email</label>
+        <div class="input-group">
+          <input type="text" name="email" required class="form-control" ng-model="rating.email" ng-pattern="/^[^@]+$/" ng-maxlength="50" autocomplete-x="off" />
+          <span class="input-group-addon email-domain">@{{company.domain}}</span>
+        </div>
+      </div> 
+
+      <div class="panel-block-title">Optional</div>
+
+      <div class="form-group" ng-class="{'has-error': form.title.$invalid && submitted}">
+        <label class="control-label" for="title">Your work title</label>
+        <input type="text" name="title" class="form-control" ng-model="rating.title" ng-maxlength="100" autocomplete="off" typeahead="t for t in titles | filter:$viewValue | limitTo:8" />
+      </div> 
+
+      <div class="form-group" ng-class="{'has-error': form.location.$invalid && submitted}">
+        <label class="control-label" for="location">Your work location</label>
+        <input type="text" name="location" class="form-control" ng-model="rating.location" ng-maxlength="100" autocomplete="off" typeahead="l for l in locations | filter:$viewValue | limitTo:8" />
+      </div> 
+
+      <div class="form-group" ng-class="{'has-error': form.comment.$invalid && submitted}">
+        <label class="control-label" for="comment">Comments</label>
+        <textarea name="comment" class="form-control" ng-model="rating.comment" ng-maxlength="2000" rows="5"></textarea>
+        <span ng-show="form.comment.$invalid" class="help-block">Please be a bit concise (less than 200 words)</span>
+      </div> 
+
+      <button type="submit" class="submit-btn btn btn-default" >Submit</button>
+    </form>
+
+  </div>
+</div>
+
+<div ng-if="showSuccess"> 
+  
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form name="ratingSuccessForm" class="form-horizontal">
+
+        <div class="form-group">
+          <label class="control-label col-xs-2">You picked</label>
+
+          <div class="col-xs-10" style="padding-top:5px">
+            <rating value="rating.score" max="5" readonly="true"></rating>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-xs-2">Email</label>
+          <div class="col-xs-10">
+            <p class="form-control-static">{{rating.email}}</p>
+          </div>
+        </div> 
+        
+        <div ng-if="rating.title" class="form-group">
+          <label class="control-label col-xs-2">Title</label>
+          <div class="col-xs-10">
+            <p class="form-control-static">{{rating.title}}</p>
+          </div>
+        </div> 
+
+        <div ng-if="rating.location" class="form-group">
+          <label class="control-label col-xs-2">Location</label>
+          <div class="col-xs-10">
+            <p class="form-control-static">{{rating.location}}</p>
+          </div>
+        </div> 
+        
+        <div ng-if="rating.comment" class="form-group">
+          <label class="control-label col-xs-2">Comment</label>
+          <div class="col-xs-10">
+            <p class="form-control-static">{{rating.comment}}</p>
+          </div>
+        </div> 
+
+      </form>
+    </div>
+  </div>
+
+  <div style='margin-bottom:20px'>
+    <a ng-href="/companies/{{company.id}}" class="btn btn-default">Back</a>
+  </div>
+</div>
