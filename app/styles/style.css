@@ -5,7 +5,7 @@ body {
 }
 body {
   background: #FAFAFA;
-  color: #666666;
+  color: #555;
   font-family: 'Droid Sans', Arial, sans-serif;
 }
 /* Wrapper for page content to push down footer */
@@ -17,8 +17,8 @@ body {
   padding: 0 0 40px;
 }
 .navbar-default, #footer {
-  border-color: #e0e0e0;
-  background-color: #f0f0f0; 
+  border-color: #ddd;
+  background-color: #e9e9e9; 
 }
 #footer {
   height: 40px;
@@ -118,6 +118,9 @@ body {
   font-size: 22px;
   font-weight: 700;
   font-family: 'Droid Sans', Arial, sans-serif;
+}
+.about .my-tooltip {
+  text-decoration: underline;
 }
 /* animation */
 .reveal.ng-enter {

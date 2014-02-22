@@ -41,14 +41,12 @@ angular.module('lemonfyApp')
           c: $scope.rating.comment
         };
         $scope.showLoading = true;
-        DataStore.ratingSubmit(rating, function(error, data) {
+        DataStore.ratingSubmit(rating, function(error) {
           $scope.showLoading = false;
           if (error){
             AlertService.throwError(error);
           } else {
-            $scope.rating.email = $scope.rating.email + '@' + $scope.company.domain;
-            $scope.rating.token = data.token;
-            $scope.rating.editable = false;
+            $scope.rating.email = $scope.rating.email.toLowerCase() + '@' + $scope.company.domain;
 
             AlertService.show({
               type: 'success',

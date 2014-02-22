@@ -2,6 +2,7 @@
   "name": "lemonfy",
   "version": "1.0.0",
   "description": "A simple company-rating app",
+  "main": "server.js",
   "dependencies": {
     "express": "~3.4.8",
     "lodash": "~2.4.1",
