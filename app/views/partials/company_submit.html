@@ -7,19 +7,19 @@
       <div class="form-group" ng-class="{'has-error': form.name.$invalid && submitted}">
         <label class="control-label" for="name">Name</label>
         <input class="form-control" name="name" type="text" init-focus="" required ng-minlength="2" ng-maxlength="200" ng-model="company.name" />
-        <span class="help-block">Eg: Yahoo!, IBM</span>
+<!--        <span class="help-block">Eg: Yahoo!, IBM</span>-->
       </div>
 
       <div class="form-group" ng-class="{'has-error': form.domain.$invalid && submitted}">
         <label class="control-label" for="domain">Corporate Email Domain</label>
         <input class="form-control" name="domain" type="text" required ng-model="company.domain" ng-pattern="domainRegex" ng-maxlength="50" ng-change="onDomainChange()" />
-        <span class="help-block">Eg: yahoo-inc.com, ibm.com</span>
+<!--        <span class="help-block">Eg: yahoo-inc.com, ibm.com</span>-->
       </div>
 
       <div class="form-group" ng-class="{'has-error': form.webDomain.$invalid && submitted}">
-        <label class="control-label" for="webDomain">Website Domain</label>
+        <label class="control-label" for="webDomain">Corporate Website Domain</label>
         <input class="form-control" name="webDomain" type="text" ng-model="company.webDomain" ng-pattern="domainRegex" maxlength="50" />
-        <span class="help-block">Eg: yahoo.com</span>
+<!--        <span class="help-block">Eg: yahoo.com</span>-->
       </div>
 
 <!--      <div class="checkbox">-->

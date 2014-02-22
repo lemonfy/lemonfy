@@ -2,8 +2,15 @@
 
 angular.module('lemonfyApp')
   .controller('CompanySubmitController', ['$scope', '$route', '$location', 'DataStore', 'AlertService', function ($scope, $route, $location, DataStore, AlertService) {
+    var name = $route.current.params.q || '';
+    if (name.length < 2) {
+      name = 'Example';
+    }
+    var domain = name.toLowerCase() + (name.indexOf('.com') < 0 ? '.com' : '');
     $scope.company = {
-      name: $route.current.params.q || ''
+      name: name,
+      domain : domain,
+      webDomain : domain
     };
 
     $scope.domainRegex = /^[a-zA-Z0-9-]{2,}\.[a-zA-Z]{2,}$/;

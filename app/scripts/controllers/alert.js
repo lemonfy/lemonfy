@@ -55,7 +55,7 @@ angular.module('lemonfyApp')
       add(detail);
     });
 
-    $scope.$on('$routeChangeSuccess', function(evt, current, previous) {
+    $scope.$on('$routeChangeSuccess', function(/*evt, current, previous*/) {
       if (!keepAlert()) {
         clear();
         cancelFlash();

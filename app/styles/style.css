@@ -32,12 +32,20 @@ body {
 #footer .twitter-url {
   cursor: pointer;
 }
-.center {
-  text-align: center;
-}
 .container {
   width: auto;
   max-width: 680px;
+}
+.browsehappy {
+  background-color: #666;
+  color: #FFF;
+  padding: 5px 20px;
+  /* border-radius: 3px; */
+  font-size: 0.9em;
+}
+.browsehappy a {
+  color: #FFF;
+  text-decoration: underline;
 }
 .home-page {
   max-width: 460px;

@@ -6,7 +6,7 @@ angular.module('lemonfyApp', [
   'ngAnimate',
   'ui.bootstrap'
 ])
-  .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'partials/home',
@@ -43,8 +43,6 @@ angular.module('lemonfyApp', [
       });
       
     $locationProvider.html5Mode(true);
-
-    $httpProvider.defaults.headers.common['Cache-Control'] = 'no-cache';
   }])
   .directive('initFocus', function(){
     var timer;

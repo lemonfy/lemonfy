@@ -6,7 +6,7 @@ angular.module('lemonfyApp')
       if (error) {
         AlertService.show({
           type: 'warning',
-          msg: '<strong>We cannot verify your submission.</strong><br>Your review might have been expired. Please try submitting it again.',
+          msg: '<strong>We cannot verify your submission.</strong><br>Your review might have expired. Please try submitting it again.',
           keep: true,
           flash: true
         });

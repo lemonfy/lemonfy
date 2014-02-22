@@ -7,7 +7,7 @@
   <input ng-model="q" init-focus="" class="search-input form-control" type="text" ng-change="inputChange()" typeahead="n.name for n in companyNames | filter:$viewValue | limitTo:8" typeahead-on-select="select($item)" >
 
   <div ng-show="showAdd" class='search-not-found'>
-    Couldn't find the company? <a class='company-submit-url' ng-href="/companysubmit?q={{q}}"> Add it now</a>
+    Didn't see the company in dropdown? <a class='company-submit-url' ng-href="/companysubmit?q={{q}}"> Add it now</a>
   </div>
 
 </div>
