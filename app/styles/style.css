@@ -130,6 +130,10 @@ body {
 .about .my-tooltip {
   text-decoration: underline;
 }
+.about .my-link {
+  color: #333;
+  font-weight: bold;
+}
 /* animation */
 .reveal.ng-enter {
   -webkit-transition:0.3s linear all;
